@@ -12,7 +12,6 @@ const CreatePerson = () => {
     const [selectedAddressIds, setSelectedAddressIds] = useState<string[]>([])
 
     const [createPerson] = useMutation(CREATE_PERSON);
-
     const handleSubmit = async () => {
         try {
             const response = await createPerson({

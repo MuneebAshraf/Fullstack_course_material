@@ -52,10 +52,10 @@ const Person: React.FC<Person> = ({ firstName, lastName, age }) => {
 
 ## Exercise 2 Person Form
 
-- Create a new component called PersonForm that accepts a callback function as a prop. The callback function should be called when the form is submitted and should receive the values from the form as an argument.
-- The PersonForm component should render a form with three input fields: firstName, lastName, and age. The form should also have a submit button.
+- Create a new component called UpdatePersonForm that accepts a callback function as a prop. The callback function should be called when the form is submitted and should receive the values from the form as an argument.
+- The UpdatePersonForm component should render a form with three input fields: firstName, lastName, and age. The form should also have a submit button.
 - When the form is submitted, the callback function should be called with an object containing the values from the input fields.
-- In the PersonList component, pass a callback function to the PersonForm component that adds a new person to the people array.
+- In the PersonList component, pass a callback function to the UpdatePersonForm component that adds a new person to the people array.
 - Verify that the new person is added to the list when the form is submitted.
 
 ## Exercise 3 - Update and Delete

@@ -1,5 +1,9 @@
 # Week 3: Typescript 1
 
+## Solutions
+- Link: https://stackblitz.com/edit/vitejs-vite-mwh2np?file=src%2Fmain.ts
+- project: 
+
 ## Objectives
 
 - Understand how to use typescript

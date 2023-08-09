@@ -210,5 +210,9 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,webstorm,visualstudiocode
-/week2_js/weather-app/node_modules/
+/*/*/*/node_modules/
 /*/*/node_modules/
+/*/node_modules/
+/*/*/*/.env/
+/*/*/.env/
+/*/.env/

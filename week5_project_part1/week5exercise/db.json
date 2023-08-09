@@ -1,0 +1,40 @@
+{
+  "people": [
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "age": 29,
+      "address": {
+        "street": "New Street",
+        "city": "New City",
+        "zipCode": "New Zip Code",
+        "country": "New Country"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "testtest",
+      "lastName": "testtest",
+      "age": 52,
+      "address": {
+        "street": "testtest",
+        "city": "testtest",
+        "zipCode": "24",
+        "country": "testtest"
+      }
+    },
+    {
+      "id": 4,
+      "firstName": "another",
+      "lastName": "one",
+      "age": 50,
+      "address": {
+        "street": "anotheranother",
+        "city": "another",
+        "zipCode": "232",
+        "country": "another"
+      }
+    }
+  ]
+}

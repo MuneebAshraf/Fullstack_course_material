@@ -2,7 +2,7 @@
 ## Part 1: Working in the browser
 Check out [stackblitz](https://blog.stackblitz.com/posts/vite-new-templates/)
 1. Try creating a new project with the `vanilla-ts` template
-2. Take a look at the counter.ts and see how it works
+2. Take a look at the person.ts and see how it works
 3. Now create your own file with an input field and a button. When the button is clicked, it should alert a `Hello <inputname` to the user.
   - Hints: 
     - use `document.createElement('input');` and `document.createElement('button');` to create the elements.

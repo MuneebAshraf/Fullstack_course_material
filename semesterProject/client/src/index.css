@@ -1,0 +1,693 @@
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr; /* auto for the header's content size and 1fr for the remaining space */
+    grid-template-areas:
+        "header"
+        "main";
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    overflow-y: auto; /* In case the content exceeds the viewport height */
+}
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Additional resets for better cross-browser consistency */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px
+}
+
+a {
+    text-decoration: none;
+    color: #3498db
+}
+
+ul {
+    list-style: none;
+    padding: 0
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer
+}
+
+.btn:hover {
+    background-color: #2980b9
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+.header, .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+}
+.header-content {
+    display: flex;
+}
+.header-content .logo {
+    margin: 0 2rem;
+    flex: 1;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 4px
+}
+
+.card img {
+    max-width: 100%
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 15px
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.5
+}
+
+.login-container, .create-user-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+
+    margin: 50px auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-login {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-logout {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navbar-item .navbar-link {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-item .navbar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Profile section styles */
+.profile-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 2rem;
+    width: 100%;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-details label {
+    font-weight: bold;
+}
+
+.profile-details span {
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.edit-profile-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Adoption requests section styles */
+.adoption-requests {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.adoption-requests h3 {
+    color: #333;
+}
+
+.adoption-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.adoption-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adoption-item span {
+    font-weight: bold;
+}
+
+.adoption-item button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adoption-item button:hover {
+    background-color: #0056b3;
+}
+
+.browse-pets {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f5f5f5; /* Light gray background for the section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.browse-pets-title {
+    width: 100%;
+    text-align: center;
+    margin: 2rem;
+    color: #333; /* Dark text color */
+    font-size: 24px;
+}
+
+.browse-pets > div:hover {
+    transform: scale(1.05);
+}
+.browse-pets > div {
+    background-color: #fff; /* White background for each pet card */
+    padding: 15px;
+    margin: 10px 0; /* Vertical spacing between cards */
+    border-radius: 8px; /* Rounded corners for each card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth on each card */
+    width: 100%; /* Full width of the parent container */
+    max-width: 400px; /* Maximum width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.browse-pets p {
+    margin: 5px 0; /* Spacing between pet details */
+    color: #555; /* Dark gray text color */
+    font-size: 18px;
+}
+
+.shelters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6; /* Light gray background for the section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 20px; /* Spacing from the previous section */
+}
+
+.shelters h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; /* Spacing below the title */
+    color: #333; /* Dark text color */
+    font-size: 24px;
+}
+
+.shelters > a:hover {
+    transform: scale(1.05);
+}
+.shelters > a {
+    transition: transform 0.3s ease;
+    background-color: #fff; /* White background for each shelter card */
+    padding: 15px;
+    margin: 10px 0; /* Vertical spacing between cards */
+    border-radius: 8px; /* Rounded corners for each card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth on each card */
+    width: 100%; /* Full width of the parent container */
+    max-width: 400px; /* Maximum width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shelters p {
+    text-decoration: none;
+    margin: 5px 0; /* Spacing between shelter details */
+    color: #555; /* Dark gray text color */
+    font-size: 18px;
+}
+
+.shelters a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold font for links */
+    margin-top: 10px; /* Spacing above the link */
+}
+
+.shelters a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}
+
+.shelter-details-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shelter-details-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.shelter-details-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.shelter-details-container h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.shelter-details-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.shelter-details-container li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.shelter-details-container li:hover {
+    background-color: #f5f5f5;
+}
+
+.shelter-details-container a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: 600;
+}
+
+.shelter-details-container a:hover {
+    text-decoration: underline;
+}
+
+
+.pet-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-details-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pet-details-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.pet-details-container button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pet-details-container button:hover {
+    background-color: #0056b3;
+}
+
+.adoption-requests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.adoption-requests h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adoption-requests div {
+    flex: 0 0 calc(33.33% - 20px); /* This will make it 3 cards in a row. Adjust as needed. */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.adoption-requests p {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center
+}
+
+/* Status styling */
+.adoption-requests p:first-child {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FFC107 ;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.adoption-requests .approved p:first-child {
+    background-color: #4CAF50;;
+}
+.adoption-requests .rejected p:first-child {
+    background-color: #F44336;
+}
+
+
+.dashboard-container {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    grid-template-rows: auto auto auto auto; /* Four rows that adjust to content size */
+    gap: 20px; /* Gap between grid items */
+    grid-template-areas:
+        "profile adoption-requests adoption-requests"
+        "profile adoption-requests adoption-requests"
+        "browse-pets browse-pets browse-pets"
+        "shelters shelters shelters";
+}
+
+.profile-section {
+    grid-area: profile;
+}
+
+.adoption-requests {
+    grid-area: adoption-requests;
+}
+
+.browse-pets {
+    grid-area: browse-pets;
+}
+
+.shelters {
+    grid-area: shelters;
+}

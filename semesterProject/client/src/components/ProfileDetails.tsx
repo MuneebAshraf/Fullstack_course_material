@@ -18,7 +18,7 @@ return (
             <label>Email:</label>
             <span>{currentUser?.email}</span>
         </div>
-        <button className="edit-profile-btn" onClick={() => navigate('/editProfile')}>Edit Profile</button>
+        <button className="edit-profile-btn" onClick={() => navigate('/edit-profile')}>Edit Profile</button>
     </section>
 </div>
 )

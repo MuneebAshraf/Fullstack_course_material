@@ -13,6 +13,7 @@ const shelterResolvers = {
         },
         shelter: async (_: never, {id}: { id: string }) => {
             try {
+                console.log(id)
                 return await Shelter.findById(id).populate('pets');
             } catch (error: any) {
                 console.error(`Failed to fetch shelter with id ${id}: ${error.message}`);

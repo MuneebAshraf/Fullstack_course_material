@@ -18,7 +18,7 @@ const CreateUser: React.FC = () => {
         const user = await createUser({
             variables: {input}
         });
-        dispatch?.({type: 'SET_USER', payload: user.data.createdUser});
+        dispatch?.({type: 'SET_USER', payload: user.data.createUser});
         //navigate to dashboard page with router
         navigate('/dashboard');
 

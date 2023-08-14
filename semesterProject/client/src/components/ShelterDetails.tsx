@@ -1,20 +1,21 @@
-import React from 'react';
-import {useParams, Link} from 'react-router-dom';
-import {useQuery} from '@apollo/client';
+import React, {useEffect} from 'react';
+import {useParams, Link, useNavigate} from 'react-router-dom';
+import { useQuery} from '@apollo/client';
 import GET_BY_ID from '../graphql/queries/GetById';
-import {Pet} from "../types";
+import {Pet, Shelter} from "../types";
 
 const ShelterDetails: React.FC = () => {
-    const {id: shelterId} = useParams<{ id: string }>();
-    const {loading, error, data} = useQuery(GET_BY_ID.SHELTER, {
-        variables: {shelterId}
+    const navigate = useNavigate();
+    const id = useParams<{ id: string }>();
+    const {data, loading, error} = useQuery(GET_BY_ID.SHELTER, {
+        variables: {id}
     });
 
+
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (error) return <p>Shelter not found</p>;
 
-    const {shelter} = data;
-
+    const shelter:Shelter = data.shelter;
     return (
         <div className="shelter-details-container">
             <h2>{shelter.name}</h2>

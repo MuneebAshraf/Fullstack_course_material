@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useMutation} from '@apollo/client';
 import LOGIN from '../graphql/mutations/Login';
 import {useNavigate} from 'react-router-dom';
-import {useUserDispatch} from '../contexts/UserContext';
+import {useCurrentUser, useUserDispatch} from '../contexts/UserContext';
 import {UserInput} from "../types";
 
 
@@ -12,6 +12,13 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState<string>('');
     const [login, {loading, error}] = useMutation(LOGIN);
     const navigate = useNavigate();
+    const currentUser = useCurrentUser();
+
+    useEffect(() => {
+        if (currentUser) {
+            currentUser.isAdmin ? navigate('/admin-dashboard') : navigate('/dashboard');
+        }
+    }, [currentUser, navigate])
 
     const handleSubmit = async (e: React.FormEvent) => {
 
@@ -23,7 +30,7 @@ const Login: React.FC = () => {
             });
             dispatch?.({type: 'SET_USER', payload: user.data.login});
             //navigate to dashboard page with router
-            navigate('/dashboard');
+            user.data.login.isAdmin ? navigate('/admin-dashboard') : navigate('/dashboard');
 
         } catch (err) {
             console.error("Error logging in:", err);

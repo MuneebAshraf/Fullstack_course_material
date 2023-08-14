@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import {useMutation} from '@apollo/client';
 import UPDATE from '../graphql/mutations/Update';
 import DELETE from '../graphql/mutations/Delete';
-import {useCurrentUser} from '../contexts/UserContext';
+import {useCurrentUser, useUserDispatch} from '../contexts/UserContext';
+import {useNavigate} from "react-router-dom";
 
 const EditProfile: React.FC = () => {
     const currentUser = useCurrentUser();
+    const dispatch = useUserDispatch();
 
     const [username, setUsername] = useState<string>(currentUser?.username || '');
     const [email, setEmail] = useState<string>(currentUser?.email || '');
@@ -13,6 +15,7 @@ const EditProfile: React.FC = () => {
 
     const [updateUser] = useMutation(UPDATE.USER);
     const [deleteUser] = useMutation(DELETE.USER);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,9 +33,14 @@ const EditProfile: React.FC = () => {
     const handleDeleteProfile = async () => {
         if (window.confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
             try {
-                await deleteUser({
+                const isDeleted = await deleteUser({
                     variables: {id: currentUser?.id}
                 });
+                if (isDeleted) {
+                    dispatch?.({type: 'LOGOUT'});
+                    navigate('/');
+                }
+
                 // Handle user logout or redirection after profile deletion
             } catch (err:any) {
                 console.error("Error deleting profile:", err.message);
@@ -74,6 +82,7 @@ const EditProfile: React.FC = () => {
                     />
                 </div>
                 <button type="submit" className="btn-update">Update Profile</button>
+
             </form>
             <button className="btn-delete" onClick={handleDeleteProfile}>Delete Profile</button>
         </div>

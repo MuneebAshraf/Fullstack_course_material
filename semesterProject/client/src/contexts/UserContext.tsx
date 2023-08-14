@@ -4,6 +4,7 @@ interface User {
     id: string;
     username: string;
     email: string;
+    isAdmin: boolean;
 }
 
 // Define the actions
@@ -34,7 +35,7 @@ function userReducer(state: User | null, action: Action): User | null {
 
 export function UserProvider({children}: { children: React.ReactNode }) {
     const localUser = localStorage.getItem('currentUser');
-    const parsedUser = localUser ? JSON.parse(localUser) : initialState;
+    const parsedUser = localUser && localUser !== 'undefined' ? JSON.parse(localUser) : initialState;
     const [state, dispatch] = useReducer(userReducer, parsedUser);
 
     return (

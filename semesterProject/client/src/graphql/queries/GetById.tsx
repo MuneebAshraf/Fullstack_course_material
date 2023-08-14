@@ -29,12 +29,12 @@ const USER = gql`
 `;
 
 const SHELTER = gql`
-    query GetShelterDetails($shelterId: ID!) {
-        shelter(id: $shelterId) {
+    query Shelter($id: ID!) {
+        shelter(id: $id) {
             id
-            name
-            address
             email
+            address
+            name
             pets {
                 id
                 name

@@ -54,7 +54,7 @@ type Query {
 
 # Mutations
 type Mutation {
-    login(input: UserInput): User
+    login(input: UserInput): User!
     createUser(input: UserInput!): User!
     createPet(input: PetInput!): Pet!
     createAdoptionRequest(input: AdoptionRequestInput!): AdoptionRequest!

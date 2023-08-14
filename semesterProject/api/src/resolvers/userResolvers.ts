@@ -25,7 +25,6 @@ const userResolvers = {
     },
     Mutation: {
         login: async (_: any, {input}: {input:IUser} )=> {
-            console.log(input)
             const user = await User.findOne({username: input.username});
             if (!user) {
                 throw new Error('No user found with this email address.');
@@ -35,6 +34,8 @@ const userResolvers = {
             if (!valid) {
                 throw new Error('Incorrect password.');
             }
+
+            console.log(user)
 
             return user;
         },

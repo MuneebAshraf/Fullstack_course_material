@@ -23,15 +23,17 @@ const PETS = gql`
         }
     }
 `;
-const ADOPTIONREQUESTS = gql`
+const ADOPTION_REQUESTS = gql`
     query GetAllAdoptionRequests {
         adoptionRequests {
             id
             status
             user {
+                id
                 username
             }
             pet {
+                id
                 name
             }
         }
@@ -52,7 +54,7 @@ const SHELTERS = gql`
 const GET_ALL = {
     USERS,
     PETS,
-    ADOPTIONREQUESTS,
+    ADOPTION_REQUESTS,
     SHELTERS
 }
 

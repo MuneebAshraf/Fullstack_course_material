@@ -26,7 +26,7 @@ const PET = gql`
 `;
 
 // Mutation for updating an adoption request
-const ADOPTIONREQUEST = gql`
+const ADOPTION_REQUEST = gql`
     mutation UpdateAdoptionRequest($id: ID!, $input: AdoptionRequestInput!) {
         updateAdoptionRequest(id: $id, input: $input) {
             id
@@ -56,7 +56,7 @@ const SHELTER = gql`
 const UPDATE = {
     USER,
     PET,
-    ADOPTIONREQUEST,
+    ADOPTION_REQUEST,
     SHELTER
 }
 

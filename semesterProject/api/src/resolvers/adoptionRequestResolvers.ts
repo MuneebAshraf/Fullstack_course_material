@@ -41,7 +41,7 @@ const adoptionRequestResolvers = {
                     id,
                     input,
                     {new: true}
-                ).populate('user pet shelter');
+                ).populate('user pet');
             } catch (error: any) {
                 console.error(`Failed to update adoption request with id ${id}: ${error.message}`);
                 throw new Error('Failed to update adoption request');

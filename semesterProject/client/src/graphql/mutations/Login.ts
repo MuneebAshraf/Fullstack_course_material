@@ -6,6 +6,7 @@ const LOGIN = gql`
             email
             id
             username
+            isAdmin
         }
     }
 `;
